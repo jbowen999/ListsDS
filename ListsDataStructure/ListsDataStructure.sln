@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListsDataStructure", "ListsDataStructure.csproj", "{AF7564B3-B406-4C18-99A8-A2CA154149D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListsDataStructureTests", "..\ListsDataStructureTests\ListsDataStructureTests.csproj", "{71186CF3-5BDD-49AB-AD69-ADCA76760B73}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF7564B3-B406-4C18-99A8-A2CA154149D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF7564B3-B406-4C18-99A8-A2CA154149D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF7564B3-B406-4C18-99A8-A2CA154149D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF7564B3-B406-4C18-99A8-A2CA154149D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71186CF3-5BDD-49AB-AD69-ADCA76760B73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71186CF3-5BDD-49AB-AD69-ADCA76760B73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71186CF3-5BDD-49AB-AD69-ADCA76760B73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71186CF3-5BDD-49AB-AD69-ADCA76760B73}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A25835CC-ACD2-49C2-8071-1BDDB5071AE8}
+	EndGlobalSection
+EndGlobal

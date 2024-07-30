@@ -32,18 +32,44 @@ namespace ListsDataStructure
             IncreaseCapacity();
             _list[_size++] = value;
         }
-
+        /// <summary>
+        /// Will add the incoming value to the start of the list and shift all remaining values to the right 1 position
+        /// starts at the end of the list and move values. inserts new value to first position
+        /// </summary>
+        /// <param name="value">the value to be added</param>
         public void AddStart(int value)
         {
             IncreaseCapacity();
             for (int i = _size; i >= 0; i--)
             {
-                _list[i + 1] = i;
+                _list[i + 1] = _list[i];
             }
             _list[0] = value;
             _size++;
         }
 
+        public void Insert(int value, int indexToInsertAt)
+        {
+            if(indexToInsertAt < 0 || indexToInsertAt > _size)
+                throw new IndexOutOfRangeException($"Index {indexToInsertAt} does not exist");
+            IncreaseCapacity();
+            for (int i = _size - 1; i >= indexToInsertAt; i--)
+            {
+                _list[i + 1] = _list[i];
+            }
+
+            _list[indexToInsertAt] = value;
+        }
+
+        public void DeleteStart()
+        {
+            if (_size <= 0) return;
+            for(int i = 0; i < _size; i++)
+            {
+                _list[i] = List[i + 1];
+            }
+            _size--;    
+        }
         private void IncreaseCapacity()
         {
             if (_size != _list.Length) return;

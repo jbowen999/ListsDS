@@ -15,7 +15,7 @@ namespace ListsDataStructure.Tests
         public void Append_AddSingleElement_ShouldAddToEnd()
         {
             //Arrange
-            MyArrayList list = new MyArrayList();
+            MyArrayList<int> list = new MyArrayList<int>();
             // Act
             list.Append(4);
             // Assert
@@ -26,7 +26,7 @@ namespace ListsDataStructure.Tests
         public void Append_AddMultipleElements_ShouldAddToEnd()
         {
             //Arrange
-            MyArrayList list = new MyArrayList();
+            MyArrayList<int> list = new MyArrayList<int>();
             // Act
             list.Append(4);
             list.Append(3);
@@ -40,7 +40,7 @@ namespace ListsDataStructure.Tests
         public void Append_AddMoreElementsThan_ShouldAddToEnd()
         {
             //Arrange
-            MyArrayList list = new MyArrayList();
+            MyArrayList<int> list = new MyArrayList<int>();
             // Act
             list.Append(4);
             list.Append(5);
@@ -62,7 +62,7 @@ namespace ListsDataStructure.Tests
         public void AddStart_ListIsEmpty_ShouldAddToStart()
         {
             //Arrange
-            MyArrayList list = new MyArrayList();
+            MyArrayList<int> list = new MyArrayList<int>();
             // Act
             list.AddStart(4);
             // Assert
@@ -73,7 +73,7 @@ namespace ListsDataStructure.Tests
         public void AddStart_ListHasValues_ShouldAddToStart()
         {
             //Arrange
-            MyArrayList list = new MyArrayList();
+            MyArrayList<int> list = new MyArrayList<int>();
             list.Append(5);
             list.Append(4);
             // Act
@@ -87,7 +87,7 @@ namespace ListsDataStructure.Tests
         public void Insert_ListIsEmpty_ShouldAddToStart()
         {
             //Arrange
-            MyArrayList list = new MyArrayList();
+            MyArrayList<int> list = new MyArrayList<int>();
             // Act
             list.Insert(5, 0);
 
@@ -99,7 +99,7 @@ namespace ListsDataStructure.Tests
         public void Insert_ListIsEmptyIndexIsInvalid_ShouldThrowException()
         {
             //Arrange
-            MyArrayList list = new MyArrayList();
+            MyArrayList<int> list = new MyArrayList<int>();
             // Act
 
             // Assert
@@ -111,7 +111,7 @@ namespace ListsDataStructure.Tests
         public void Insert_HasValues_ShouldInsertAtCorrectPosition()
         {
             //Arrange
-            MyArrayList list = new MyArrayList();
+            MyArrayList<int> list = new MyArrayList<int>();
             list.Append(4);
             list.Append(5);
             list.Append(7);
@@ -127,7 +127,7 @@ namespace ListsDataStructure.Tests
         public void DeleteStart_ListHasValues_ShouldDeleteFirstElement()
         {
             //Arrange
-            MyArrayList list = new MyArrayList();
+            MyArrayList<int> list = new MyArrayList<int>();
             list.Append(4);
             list.Append(5);
             list.Append(7);
@@ -138,6 +138,58 @@ namespace ListsDataStructure.Tests
             Assert.AreEqual(7, list.List[1]);
             Assert.AreEqual(0, list.List[2]);
             Assert.IsTrue(list.Size == 2);
+        }
+
+        [TestMethod()]
+        public void DeleteStart_ListIsFull_ShouldDeleteFirstElement()
+        {
+            //Arrange
+            MyArrayList<int> list = new MyArrayList<int>(3);
+            list.Append(4);
+            list.Append(5);
+            list.Append(7);
+            // Act
+            list.DeleteStart();
+            // Assert
+            Assert.AreEqual(5, list.List[0]);
+            Assert.AreEqual(7, list.List[1]);
+            Assert.AreEqual(0, list.List[2]);
+            Assert.IsTrue(list.Size == 2);
+        }
+
+        [TestMethod()]
+        public void DeleteEnd_ListHasValues_ShouldDeleteFromEnd()
+        {
+            //Arrange
+            MyArrayList<int> list = new MyArrayList<int>();
+            list.Append(4);
+            list.Append(5);
+            list.Append(7);
+            // Act
+            list.DeleteEnd();
+            // Assert
+            Assert.IsTrue(list.Size == 2);
+            Assert.AreEqual(4, list.List[0]);
+            Assert.AreEqual(5, list.List[1]);
+            Assert.AreEqual(0, list.List[2]);
+        }
+
+        [TestMethod()]
+        public void DeleteStart_ListHasStringValues_ShouldDeleteFirstElement()
+        {
+            //Arrange
+            MyArrayList<string> list = new MyArrayList<string>();
+            list.Append("Hello"); 
+            list.Append("World");
+            list.Append("Howdy");
+
+            //Act
+            list.DeleteStart();
+
+            //Assert
+            Assert.IsTrue(list.Size == 2);
+            Assert.AreEqual("World", list.List[0]);
+            Assert.AreEqual("Howdy", list.List[1]);
         }
     }
 }
